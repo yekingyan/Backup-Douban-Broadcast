@@ -19,7 +19,7 @@
 
 1.豆瓣处于登陆状态<br>
 2.复制豆瓣下的`Uesr-Agent`和`Cookie`，请用火狐或chrome等浏览器用**F12**打开——开发者模式——  
-![获取cookie,Uesr-Agent](/rd/text.jpg)  
+![获取cookie,Uesr-Agent](/rd/text.gif)  
 3.更替脚本中的`Uesr-Agent`和`Cookie`   
 4.运行并输入要备份的页数
 
