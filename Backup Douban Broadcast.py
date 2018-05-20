@@ -41,6 +41,7 @@ def getWeb(page):
 #启动前清除历史数据
 with open('douban.txt','wt') as f:
     f.write("If you see a garbled file,make sure the file is encoded as utf-8.")
+    f.write('')
     f.seek(0)
 
 #控制页数循环
