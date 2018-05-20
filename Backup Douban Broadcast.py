@@ -2,6 +2,7 @@
 
 from lxml import etree
 import requests
+import time
 
 
 
@@ -16,18 +17,20 @@ def getWeb(page):
     url = 'https://www.douban.com/people/yekingyan/statuses?p=%s' % page
     webData = requests.get(url,headers=headers).text
     s = etree.HTML(webData)
+    #设置一个暂停时间，太快的话，豆瓣会锁号的（不是封号）。 一毛一条解锁短信：）
+    time.sleep(2)
 
-#用lxml获得豆瓣广播，时间
+#用lxml获得豆瓣广播，广播时间
     says = s.xpath('//*[@id="content"]/div/div[1]/div[3]/div/div/div/div[2]/div[1]/blockquote/p/text()')
     times = s.xpath('//*[@id="content"]/div/div[1]/div[3]/div/div/div/div[2]/div[2]/span/@title')
-    for (time,say) in zip(times,says):
-        print(time)
+    for (time1,say) in zip(times,says):
+        print(time1)
         print(say)
         print('')
 
-        #写入文件,如果
+        #写入文件,如果没有指定为utf-8，脚本会在遇到生僻字时停止运行
         with open('douban.txt','a',encoding='utf-8') as f:
-            f.write(time)
+            f.write(time1)
             f.write('\n')
             f.write(say)
             f.write('\n')
@@ -36,14 +39,13 @@ def getWeb(page):
 
 
 #启动前清除历史数据
-print("If you see a garbled file,make sure the file is encoded as utf-8.")
 with open('douban.txt','wt') as f:
+    f.write("If you see a garbled file,make sure the file is encoded as utf-8.")
     f.seek(0)
 
 #控制页数循环
-pageNumber = int(input(u'请输入要备份的页数（前几页）：'))
+pageNumber = int(input(u"请输入要备份的页数，为豆瓣前几页的页数\n（如若全部备份，请直接输入一个较大数）："))
 pageNumber += 1
 for i in range(1,pageNumber):
     getWeb(i)
-
 
