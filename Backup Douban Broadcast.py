@@ -20,22 +20,23 @@ def getWeb(page):
     #设置一个暂停时间，太快的话，豆瓣会锁号的（不是封号）。 一毛一条解锁短信：）
     time.sleep(2)
 
-#用lxml获得豆瓣广播，广播时间
-    says = s.xpath('//*[@id="content"]/div/div[1]/div[3]/div/div/div/div[2]/div[1]/blockquote/p/text()')
-    times = s.xpath('//*[@id="content"]/div/div[1]/div[3]/div/div/div/div[2]/div[2]/span/@title')
-    for (time1,say) in zip(times,says):
-        print(time1)
-        print(say)
-        print('')
+    for i in range(0, 25):  # 保持时间与内容吻合
+        #用lxml获得豆瓣广播，广播时间
+        says = s.xpath('//*[@id="content"]/div/div[1]/div[3]/div[%d]/div/div/div[2]/div[1]/blockquote/p/text()' % i)
+        times = s.xpath('//*[@id="content"]/div/div[1]/div[3]/div[%d]/div/div/div[2]/div[2]/span/@title' % i)
+        for (time1,say) in zip(times,says):
+            print(time1)
+            print(say)
+            print('')
 
-        #写入文件,如果没有指定为utf-8，脚本会在遇到生僻字时停止运行
-        with open('douban.txt','a',encoding='utf-8') as f:
-            f.write(time1)
-            f.write('\n')
-            f.write(say)
-            f.write('\n')
-            f.write('\n')
-            f.seek(0)
+            #写入文件,如果没有指定为utf-8，脚本会在遇到生僻字时停止运行
+            with open('douban.txt','a',encoding='utf-8') as f:
+                f.write(time1)
+                f.write('\n')
+                f.write(say)
+                f.write('\n')
+                f.write('\n')
+                f.seek(0)
 
 
 #启动前清除历史数据
