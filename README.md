@@ -6,10 +6,10 @@
 ---------------------------------------------------------------------------
 
 ### <p align = "center">效果展示</P>
-<figure class="half">
-	<img src="/rd/douban2.png" width="308"/>
-	<img src="/rd/douban2_1.png" width="308"/>
-</figure>
+<center class="half">
+	<img src="/rd/douban2.png" width="440"/>
+	<img src="/rd/douban2_1.png" width="440"/>
+</center>
 
 
 ## 一、使用前提<br>
