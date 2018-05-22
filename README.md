@@ -6,7 +6,7 @@
 ---------------------------------------------------------------------------
 
 ### <p align = "center">效果展示</P>
-![douban](/rd/douban2.png)  
+![douban](/rd/douban2.png)|[douban](/rd/douban2_1.png)
 
 
 ## 一、使用前提<br>
