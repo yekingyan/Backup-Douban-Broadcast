@@ -6,11 +6,9 @@
 ---------------------------------------------------------------------------
 
 ### <p align = "center">效果展示</P>
-<center class="half">
-	<img src="/rd/douban2.png" width="440"/>
-	<img src="/rd/douban2_1.png" width="440"/>
-</center>
-
+<div style="float:left;text-align:center;"><img src="/rd/douban2.png" style="margin-bottom:0px; width:50%;" alt="提示语"><br/>备份豆瓣广播2</div>
+<div style="float:left;text-align:center;"><img src="/rd/douban2_1.png" style="margin-bottom:0px; width:50%;" alt="提示语"><br/>备份豆瓣广播2</div>
+<div style="clear:both;"></div>
 
 ## 一、使用前提<br>
 
