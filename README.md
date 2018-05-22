@@ -7,8 +7,8 @@
 
 ### <p align = "center">效果展示</P>
 <figure class="half">
-	<img src="/rd/douban2.png">
-	<img src="/rd/douban2_1.png">
+	<img src="/rd/douban2.png" width="308"/>
+	<img src="/rd/douban2_1.png" width="308"/>
 </figure>
 
 
