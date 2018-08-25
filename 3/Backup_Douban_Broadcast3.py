@@ -70,9 +70,7 @@ def cashed_page(url):
     保存的文件具有时效性，因为页数url的内容随增长而变动
     """
     folder = 'cached'
-    filename = url.split('=', 1)[-1]
-    # 便于千页内的排序，0001.html
-    filename = "0" + filename + '.html'
+    filename = url.split('=', 1)[-1] + '.html'
     path = os.path.join(folder, filename)
 
     # 如果没有'cached'目录则创建
